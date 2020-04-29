@@ -1,0 +1,4 @@
+rootProject.name='DateUtilsCompat'
+include ':app'
+include ':dateutilscompat'
+include ':check'
