@@ -1,5 +1,6 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
+apply plugin: 'com.novoda.bintray-release'
 
 android {
     compileSdkVersion 29
@@ -10,8 +11,16 @@ android {
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
-
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+}
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.novoda:bintray-release:0.9.2'
     }
 }
 
@@ -19,4 +28,16 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     lintPublish project(path: ':check')
     testImplementation 'junit:junit:4.13'
+}
+
+publish {
+    bintrayUser = System.getenv("BINTRAY_USER")
+    bintrayKey = System.getenv("BINTRAY_KEY")
+
+    userOrg = "kuluna"
+    groupId = "jp.kuluna"
+    artifactId = 'dateutilscompat'
+    publishVersion = '0.0.1'
+    desc = "Fix DateUtils format time in Japanese language."
+    dryRun = false
 }
