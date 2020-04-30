@@ -20,14 +20,20 @@ implementation 'jp.kuluna:dateutilscompat:1.0.0'
 
 ```kotlin
 // DateUtils.formatDateTime(context, start, DateUtils.FORMAT_SHOW_DATE. or DateUtils.FORMAT_SHOW_TIME)
+// 4月29日 13時37分
 
 DateUtilsCompat.formatDateTime(context, start, DateUtils.FORMAT_SHOW_DATE or DateUtils.FORMAT_SHOW_TIME)
 // 4月29日 13:37
 
 // DateUtils.formatDateRange(context, start, end, DateUtils.FORMAT_SHOW_DATE. or DateUtils.FORMAT_SHOW_TIME)
+// 4月29日 13時37分～15時37分
+// 4月29日 13:37～4月30日 13:37
+// 2020年4月29日 13:37～2021年4月29日 13:37
 
 DateUtilsCompat.formatDateRange(context, start, end, DateUtils.FORMAT_SHOW_DATE. or DateUtils.FORMAT_SHOW_TIME)
-// 4月29日 13:37分～15:37
+// 4月29日 13:37～15:37
+// 4月29日 13:37～4月30日 13:37
+// 2020年4月29日 13:37～2021年4月29日 13:37
 ```
 
 ## Custom
