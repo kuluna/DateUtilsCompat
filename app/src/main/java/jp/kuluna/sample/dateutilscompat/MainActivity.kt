@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
 
         val now = Date()
         val twoHoursLater = Calendar.getInstance().run {
-            add(Calendar.HOUR_OF_DAY, 2)
+            add(Calendar.HOUR_OF_DAY, 1)
             time
         }
         val tomorrow = Calendar.getInstance().run {
@@ -54,12 +54,16 @@ class MainActivity : AppCompatActivity() {
             DateUtils.FORMAT_SHOW_DATE or DateUtils.FORMAT_SHOW_TIME
         )
 
-        DateUtils.formatDateTime(this, Date().time, 0)
-        DateUtils.formatDateRange(this, Date().time, Date().time, 0)
-        DateUtils.getRelativeTimeSpanString(Date().time)
-
         Log.i(localClassName, hourRangeString)
         Log.i(localClassName, dayRangeString)
         Log.i(localClassName, yearRangeString)
+
+
+        val nowString = DateUtilsCompat.formatDateTime(
+            this, now.time,
+            DateUtils.FORMAT_SHOW_DATE or DateUtils.FORMAT_SHOW_TIME
+        )
+
+        Log.i(localClassName, nowString)
     }
 }

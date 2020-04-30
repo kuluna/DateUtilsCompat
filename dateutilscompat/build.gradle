@@ -37,7 +37,7 @@ publish {
     userOrg = "kuluna"
     groupId = "jp.kuluna"
     artifactId = 'dateutilscompat'
-    publishVersion = '0.0.1'
+    publishVersion = '1.0.0'
     desc = "Fix DateUtils format time in Japanese language."
     dryRun = false
 }

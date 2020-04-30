@@ -5,7 +5,8 @@ import com.intellij.psi.PsiMethod
 import org.jetbrains.uast.UCallExpression
 
 class DateUtilsLint : Detector(), SourceCodeScanner {
-    override fun getApplicableMethodNames(): List<String>? = listOf("formatDateRange")
+    override fun getApplicableMethodNames(): List<String>? =
+        listOf("formatDateTime", "formatDateRange")
 
     override fun visitMethodCall(context: JavaContext, node: UCallExpression, method: PsiMethod) {
         super.visitMethodCall(context, node, method)
