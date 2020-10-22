@@ -7,11 +7,10 @@ import androidx.appcompat.app.AppCompatActivity
 import jp.kuluna.dateutilscompat.DateUtilsCompat
 import java.util.*
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(R.layout.activity_main) {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
 
         val now = Date()
         val twoHoursLater = Calendar.getInstance().run {
