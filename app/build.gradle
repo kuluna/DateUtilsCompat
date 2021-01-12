@@ -28,7 +28,7 @@ android {
 }
 
 dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation project(path: ':dateutilscompat')
 
     implementation 'androidx.appcompat:appcompat:1.2.0'
