@@ -1,6 +1,5 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
-apply plugin: 'com.github.panpf.bintray-publish'
 
 android {
     compileSdkVersion 30
@@ -19,30 +18,8 @@ android {
     }
 }
 
-buildscript {
-    repositories {
-        jcenter()
-    }
-    dependencies {
-        classpath 'com.github.panpf.bintray-publish:bintray-publish:1.0.0'
-    }
-}
-
 dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     lintPublish project(path: ':check')
     testImplementation 'junit:junit:4.13.1'
-}
-
-publish {
-    bintrayUser = System.getenv("BINTRAY_USER")
-    bintrayKey = System.getenv("BINTRAY_KEY")
-
-    userOrg = "kuluna"
-    groupId = "jp.kuluna"
-    artifactId = 'dateutilscompat'
-    publishVersion = '1.0.0'
-    desc = "Fix DateUtils format time in Japanese language."
-    website = "https://github.com/kuluna/DateUtilsCompat"
-    dryRun = false
 }
